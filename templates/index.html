@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strava Stats</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/55ae71806c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">
+          STRAVA
+        </h1>
+        <p class="subtitle">
+          Year-to-date
+        </p>
+        <p class="year">
+          {{stats.year}}
+        </p>
+        <table>
+          <thead>
+            <tr class="activity-type">
+              <td>Runs</td>
+              <td>Rides</td>
+              <td>Swims</td>
+            </tr>
+          </thead>
+          <tr class="activity-count">
+            <td>{{stats.run.count}}</td>
+            <td>{{stats.ride.count}}</td>
+            <td>{{stats.swim.count}}</td>
+          </tr>
+          <tr class="activity-distance">
+            <td>{{stats.run.distance}}m</td>
+            <td>{{stats.ride.distance}}m</td>
+            <td>{{stats.swim.distance}}m</td>
+          </tr>
+        </table>
+        <button class="button is-dark is-large" onclick="refresh(this)">
+          <span class="icon is-large">
+            <i class='fab fa-raspberry-pi'></i>
+          </span>
+          <span>
+            Refresh
+          </span>
+        </button>
+      </div>
+    </section>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+  </body>
+</html>

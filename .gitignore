@@ -1,0 +1,5 @@
+__pycache__
+.vscode
+img/stats.png
+props.py
+strava_tokens.json
